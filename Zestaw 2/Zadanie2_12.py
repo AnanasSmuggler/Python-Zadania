@@ -1,6 +1,8 @@
 """
 ZADANIE 2.12
 Zbudować napis stworzony z pierwszych znaków wyrazów z wiersza line. Zbudować napis stworzony z ostatnich znaków wyrazów z wiersza line.
+
+Autor kodu: Jan Kaleta
 """
 
 def first_signs_of_lines(string: str) -> list:

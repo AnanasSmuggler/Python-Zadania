@@ -3,6 +3,8 @@ ZADANIE 2.10
 Mamy dany napis wielowierszowy line. Podać sposób obliczenia liczby wyrazów w napisie. 
 Przez wyraz rozumiemy ciąg "czarnych" znaków, oddzielony 
 od innych wyrazów białymi znakami (spacja, tabulacja, newline).
+
+Autor kodu: Jan Kaleta
 """
 
 def count_words_in_string(string: str) -> int:

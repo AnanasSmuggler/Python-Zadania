@@ -1,6 +1,8 @@
 """
 ZADANIE 2.15
 Na liście L znajdują się liczby całkowite dodatnie. Stworzyć napis będący ciągiem cyfr kolejnych liczb z listy L.
+
+Autor kodu: Jan Kaleta
 """
 
 def create_string_from_int_list(l: list) -> str:

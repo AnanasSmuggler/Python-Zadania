@@ -1,6 +1,8 @@
 """
 ZADANIE 2.16
 W tekście znajdującym się w zmiennej line zamienić ciąg znaków "GvR" na "Guido van Rossum".
+
+Autor kodu: Jan Kaleta
 """
 
 def replace_str(string: str, to_replace: str, replacement: str) -> str:
