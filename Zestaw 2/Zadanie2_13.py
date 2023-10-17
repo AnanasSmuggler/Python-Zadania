@@ -6,7 +6,6 @@ import re
 
 #Usuwa znaki interpunkcyjne z stringu
 def remove_punctuation(string: str) -> str:
-    print(re.sub(r'[^\w\s]', '', string))
     return re.sub(r'[^\w\s]', '', string)
 
 def count_word_length(string: str) -> int:
