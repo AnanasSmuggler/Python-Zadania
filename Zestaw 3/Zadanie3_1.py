@@ -16,6 +16,7 @@ for i in "axby": if ord(i) < 100: print (i)
 3)
 for i in "axby": print (ord(i) if ord(i) < 100 else i)
 
+Autor: Jan Kaleta
 """
 
 #Kod syntaktycznie jest poprawny - to znaczy uruchomi się i da nam wynik
@@ -46,7 +47,7 @@ def number_three() -> None:
 def main() -> None:
     #number_one()
     #number_two()
-    number_three()
+    #number_three()
 
 
 if __name__ == "__main__":
