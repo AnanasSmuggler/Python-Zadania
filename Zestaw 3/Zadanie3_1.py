@@ -47,8 +47,7 @@ def number_three() -> None:
 def main() -> None:
     #number_one()
     #number_two()
-    #number_three()
-
+    number_three()
 
 if __name__ == "__main__":
     main()
