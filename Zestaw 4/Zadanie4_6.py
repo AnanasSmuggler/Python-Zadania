@@ -2,7 +2,9 @@
 ZADANIE 4.6
 
 Napisać funkcję sum_seq(sequence) obliczającą sumę liczb zawartych w sekwencji, która może zawierać zagnieżdżone podsekwencje. 
-Wskazówka: rozważyć wersję rekurencyjną, a sprawdzanie, czy element jest sekwencją, wykonać przez isinstance(item, (list, tuple)). 
+Wskazówka: rozważyć wersję rekurencyjną, a sprawdzanie, czy element jest sekwencją, wykonać przez isinstance(item, (list, tuple)).
+
+Autor kodu: Jan Kaleta
 """
 
 def sum_seq(sequence: list) -> int:
