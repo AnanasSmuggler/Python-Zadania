@@ -29,6 +29,12 @@ class Point:
     def __mul__(self, other) -> float:  # v1 * v2, iloczyn skalarny, zwraca liczbę
         return (self.x * other.x) + (self.y * other.y)
         
+    def getX(self) -> float:
+        return self.x
+
+    def getY(self) -> float:
+        return self.y
+
     def cross(self, other) -> float:         # v1 x v2, iloczyn wektorowy 2D, zwraca liczbę
         return self.x * other.y - self.y * other.x
 
