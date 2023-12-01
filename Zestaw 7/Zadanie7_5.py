@@ -1,5 +1,13 @@
 # Kod testujący moduł.
 
+"""
+ZADANIE 7.5 (KLASA CIRCLE)
+W pliku circles.py zdefiniować klasę Circle wraz z potrzebnymi metodami. 
+Okrąg jest określony przez podanie środka i promienia. Wykorzystać wyjątek ValueError do obsługi błędów. Napisać kod testujący moduł circles
+
+Autor: Jan Kaleta
+"""
+
 import math
 from point import Point
 from circle import Circle
