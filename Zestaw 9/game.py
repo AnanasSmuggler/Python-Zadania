@@ -8,6 +8,18 @@ class Game:
         self.tetrominos = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
         self.current_block = self.get_random_block()
         self.next_block = self.get_random_block()
+        self.game_over = False
+        self.score = 0
+
+    def update_score(self, lines_cleared, move_down_points):
+        if lines_cleared == 1:
+            self.score += 100
+        elif lines_cleared == 2:
+            self.score += 300
+        elif lines_cleared == 3:
+            self.score += 500
+        self.score += move_down_points
+        
 
     def get_random_block(self):
         if len(self.tetrominos) == 0:
@@ -18,22 +30,41 @@ class Game:
     
     def move_left(self):
         self.current_block.move(0, -1)
-        if self.block_inside() == False:
+        if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(0, 1)
 
     def move_right(self):
         self.current_block.move(0, 1)
-        if self.block_inside() == False:
+        if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(0, -1)
 
     def move_down(self):
         self.current_block.move(1, 0)
-        if self.block_inside() == False:
+        if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(-1, 0)
+            self.lock_block()
+            
+    def lock_block(self):
+        tiles = self.current_block.get_cell_positions()
+        for tile in tiles:
+            self.board.grid[tile[0]][tile[1]] = self.current_block.id
+        self.current_block = self.next_block
+        self.next_block = self.get_random_block()
+        rows_cleared = self.board.clear_full_rows()
+        self.update_score(rows_cleared, 0)
+        if self.block_fits() == False:
+            self.game_over = True
+
+    def block_fits(self):
+        tiles = self.current_block.get_cell_positions()
+        for tile in tiles:
+            if self.board.is_empty(tile[0], tile[1]) == False:
+                return False
+        return True
 
     def rotate_block(self):
         self.current_block.rotate()
-        if self.block_inside() == False:
+        if self.block_inside() == False or self.block_fits() == False:
             self.current_block.undo_rotate()
 
     def block_inside(self):
@@ -43,6 +74,20 @@ class Game:
                 return False
         return True
 
+    def reset(self):
+        self.board.reset()
+        self.tetrominos = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
+        self.current_block = self.get_random_block()
+        self.next_block = self.get_random_block()
+        self.score = 0
+        
     def draw(self, screen):
         self.board.draw(screen)
-        self.current_block.draw(screen)
+        self.current_block.draw(screen, 11, 11)
+        
+        if self.next_block.id == 3:
+            self.next_block.draw(screen, 255, 290)
+        if self.next_block.id == 4:
+            self.next_block.draw(screen, 255, 280)
+        else:
+            self.next_block.draw(screen, 270, 270)

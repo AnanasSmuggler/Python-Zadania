@@ -35,8 +35,8 @@ class Block:
             self.rotation = len(self.cells) - 1
 
 
-    def draw(self, screen):
+    def draw(self, screen, offset_x, offset_y):
         tiles = self.get_cell_positions()
         for tile in tiles:
-            tile_rect = pygame.Rect(tile[1] * self.cell_size + 1, tile[0] * self.cell_size + 1, self.cell_size - 1, self.cell_size - 1)
+            tile_rect = pygame.Rect(tile[1] * self.cell_size + offset_x, tile[0] * self.cell_size + offset_y, self.cell_size - 1, self.cell_size - 1)
             pygame.draw.rect(screen, self.colors[self.id], tile_rect)
