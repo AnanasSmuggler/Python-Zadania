@@ -12,3 +12,4 @@ Zestaw 6 - klasy |
 Zestaw 7 - wyjątki i iteratory |
 Zestaw 8 - dekoratory i metaklasy |
 Zestaw 9 - pygame |
+Zestaw 10 - tkinter |
