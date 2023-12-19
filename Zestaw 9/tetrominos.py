@@ -1,5 +1,8 @@
 from block import Block
 
+#Klasy dziedziczące po klasie Block opisujące siedem rodzajów bloków w grze
+#Zawierają słownik stanów i pozycji oraz pozycję startową
+
 class LBlock(Block):
     def __init__(self) -> None:
         super().__init__(id = 1)

@@ -1,3 +1,4 @@
+#Klasa zawiera tuple z kolorami
 class Colors:
     dark_grey = (26, 31, 40)
     green = (0,128,0)
@@ -11,6 +12,7 @@ class Colors:
     background_color = (0, 56, 71)
     foreground_color = (0, 71, 64)
 
+    #Metoda klasy zwraca listę z kolorami
     @classmethod
     def get_cell_colors(cls):
         return [cls.dark_grey, cls.green, cls.red, cls.orange, cls.yellow, cls.purple, cls.cyan, cls.blue]
